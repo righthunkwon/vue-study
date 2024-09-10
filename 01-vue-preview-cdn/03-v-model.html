@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js">
+      // import vue by cdn
+    </script>
+    <title>CDN Vue Project</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-model: 양방향바인딩 -->
+      <!-- Vue에서 HTML 방향으로, HTML에서 Vue로 모두 바인딩 -->
+      <!-- HTML(template)에서 Vue로의 변수 변경도 가능 -->
+      <div>{{bindMsg}}</div>
+      <div><input type="text" v-bind:placeholder="bindMsg" /></div>
+      <hr />
+      <div>{{modelMsg}}</div>
+      <div><input type="text" v-model="modelMsg" /></div>
+    </div>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            bindMsg: "bindMsg",
+            modelMsg: "modelMsg",
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>CDN Vue Project</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 
+        v-if: 
+          조건이 false일 경우 렌더링되지 않음
+          전환 비용이 높음, 전환이 적을 때 사용 
+      -->
+      <!-- 
+        v-show: 
+          조건이 false일 경우 display 속성을 통해 속성을 숨김(none)
+          초기 렌더링 비용이 높음, 전환이 많을 때 사용 
+      -->
+
+      <!-- 예제에서는 2번이 렌더링되지 않고, 4번이 display:none으로 적용 -->
+      <!-- <div style="display: none">4번</div> -->
+      <div v-if="isVisible">1번</div>
+      <div v-if="!isVisible">2번</div>
+      <div v-show="isVisible">3번</div>
+      <div v-show="!isVisible">4번</div>
+    </div>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            isVisible: true,
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

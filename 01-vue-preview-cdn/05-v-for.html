@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js">
+      // import vue by cdn
+    </script>
+    <title>CDN Vue Project</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-for: 리스트 렌더링 -->
+      <ul>
+        <li v-for="fruit in fruits">{{fruit}}</li>
+      </ul>
+    </div>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            fruits: ["사과", "키위", "바나나"],
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

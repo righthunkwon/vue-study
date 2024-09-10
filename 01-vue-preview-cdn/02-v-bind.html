@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js">
+      // import vue by cdn
+    </script>
+    <title>CDN Vue Project</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-bind: 단방향바인딩 -->
+      <!-- Vue에서 HTML 방향으로만 바인딩 -->
+      <!-- HTML(template)에서 Vue로 변수 변경 불가 -->
+      <input type="text" v-bind:placeholder="message" />
+      <button @click="hello">hello</button>
+      <button @click="reverseMsg">reverse</button>
+    </div>
+    <script>
+      const app = Vue.createApp({
+        // data
+        data() {
+          return {
+            message: "값을 입력해 주세요.",
+          };
+        },
+        // methods
+        methods: {
+          hello() {
+            alert("hello!");
+          },
+          reverseMsg() {
+            this.message = this.message.split("").reverse().join("");
+          },
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>

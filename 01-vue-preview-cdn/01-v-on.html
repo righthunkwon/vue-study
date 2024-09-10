@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js">
+      // import vue by cdn
+    </script>
+    <title>CDN Vue Project</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 1. v-on(@): 이벤트 핸들링 -->
+      <span>Counter: {{counter}} &nbsp;</span>
+
+      <span>
+        <button type="button" v-on:click="counter++">Plus</button>
+      </span>
+      <span>
+        <button type="button" @click="counter--">Minus</button>
+      </span>
+    </div>
+    <script>
+      const app = Vue.createApp({
+        // data
+        data() {
+          return {
+            counter: 0,
+          };
+        },
+      });
+      app.mount("#app");
+    </script>
+  </body>
+</html>
