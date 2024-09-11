@@ -1,6 +1,7 @@
-<template><div></div></template>
+<template><MainView /></template>
 
-<script setup></script>
+<script setup>
+import MainView from './views/MainView.vue'
+</script>
 
 <style scoped></style>
-s
